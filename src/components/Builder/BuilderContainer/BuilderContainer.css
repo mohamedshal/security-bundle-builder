@@ -1,0 +1,11 @@
+.builder-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .builder-container {
+    width: 100%;
+  }
+}

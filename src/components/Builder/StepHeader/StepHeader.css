@@ -1,0 +1,62 @@
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  cursor: pointer;
+  user-select: none;
+  min-height: 70px;
+}
+
+.step-header:hover {
+  background: #FAFBFF;
+}
+
+.step-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.step-number {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9CA3AF;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.step-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-icon {
+  font-size: 18px;
+}
+
+.step-title h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.step-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.selected-count {
+  color: #7C3AED;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.arrow {
+  color: #7C3AED;
+  font-size: 16px;
+  font-weight: 600;
+}

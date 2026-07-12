@@ -1,0 +1,18 @@
+.badge {
+  width: fit-content;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.badge-discount {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.badge-popular {
+  background: #EDE9FE;
+  color: #6D28D9;
+}
