@@ -241,6 +241,14 @@ export const useBundleStore = create((set, get) => ({
 			quantities: defaultQuantities,
 		});
 	},
+
+	clearAll: () => {
+		set({
+			activeStep: 1,
+			activeVariants: {},
+			quantities: buildInitialQuantities(),
+		});
+	},
 }));
 
 function getProductsForStep(stepId) {

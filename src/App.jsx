@@ -3,7 +3,7 @@ import SecurityBuilderPage from './components/SecurityBuilderPage/SecurityBuilde
 
 function App() {
   return (
-    <div className="app">
+    <div className="app min-h-screen">
       <SecurityBuilderPage />
     </div>
   )

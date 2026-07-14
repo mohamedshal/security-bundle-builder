@@ -1,0 +1,187 @@
+{
+  "steps": [
+    {
+      "id": 1,
+      "title": "Choose your cameras",
+      "icon": "/images/livestream.png",
+      "category": "Cameras"
+    },
+    {
+      "id": 2,
+      "title": "Choose your plan",
+      "icon": "/images/logo_hms.png",
+      "category": "Plan"
+    },
+    {
+      "id": 3,
+      "title": "Choose your sensors",
+      "icon": "/images/Group.png",
+      "category": "Sensors"
+    },
+    {
+      "id": 4,
+      "title": "Add extra protection",
+      "icon": "/images/Frame.png",
+      "category": "Accessories"
+    }
+  ],
+  "products": [
+    {
+      "id": "cam-outdoor-v4",
+      "name": "Wyze Cam v4",
+      "description": "The clearest Wyze Cam ever made.",
+      "price": 27.98,
+      "comparePrice": 35.98,
+      "badge": "Save 22%",
+      "image": "/images/wyze-v4.png",
+      "stepId": 1,
+      "hasVariants": true,
+      "variants": [
+        { "id": "cam-outdoor-v4-white", "name": "White", "color": "#FFFFFF", "image": "/images/wyze-white.png" },
+        { "id": "cam-outdoor-v4-grey", "name": "Grey", "color": "#9CA3AF", "image": "/images/wyze-grey.png" },
+        { "id": "cam-outdoor-v4-black", "name": "Black", "color": "#111827", "image": "/images/wyze-black.png" }
+      ],
+      "initialQuantities": { "cam-outdoor-v4-white": 1 }
+    },
+    {
+      "id": "cam-pan-v3",
+      "name": "Wyze Cam Pan v3",
+      "description": "360° pan and 180° tilt security camera.",
+      "price": 34.98,
+      "comparePrice": 39.98,
+      "badge": "Save 12%",
+      "image": "/images/wyze-v3.png",
+      "stepId": 1,
+      "hasVariants": true,
+      "variants": [
+        { "id": "cam-pan-v3-white", "name": "White", "color": "#FFFFFF", "image": "/images/v3-white.png" },
+        { "id": "cam-pan-v3-black", "name": "Black", "color": "#111827", "image": "/images/v3-black.png" }
+      ],
+      "initialQuantities": {}
+    },
+    {
+      "id": "cam-v2",
+      "name": "Wyze Cam Floodlight v2",
+      "description": "2K floodlight camera with a 160° wide-angle view for your garage.",
+      
+      "price": 69.98,
+      "comparePrice": 89.98,
+      "badge": "Save 22%",
+      "image": "/images/wyze-v2.png",
+      "stepId": 1,
+      "hasVariants": true,
+      "variants": [
+        { "id": "cam-v2-white", "name": "White", "color": "#FFFFFF", "image": "/images/v2-white.png" },
+        { "id": "cam-v2-black", "name": "Black", "color": "#111827", "image": "/images/v2-black.png" }
+      ],
+      "initialQuantities": { "cam-v2-white": 1 }
+    },
+    {
+      "id": "cam-doorbell",
+      "name": "Wyze Duo Cam Doorbell",
+      "description": "Two cameras. Two views. Double the porch protection.",
+      "price": 69.98,
+      "comparePrice": null,
+      "badge": "",
+      "image": "/images/wyze-dooebell.png",
+      "stepId": 1,
+      "hasVariants": false,
+      "variants": [],
+      "initialQuantities": {}
+    },
+    {
+      "id": "cam-pro",
+      "name": "Wyze Battery Cam Pro",
+      "description": "Protect anywhere. See everything in 2.5K HDR. No power outlet or electrician needed.",
+      "price": 89.98,
+      "comparePrice":null,
+      "badge": "",
+      "image": "/images/wyze-pro.png",
+      "stepId": 1,
+      "hasVariants": true,
+      "variants": [
+        { "id": "cam-pro-white", "name": "White", "color": "#FFFFFF", "image": "/images/wyze-pro.png" },
+        { "id": "cam-pro-black", "name": "Black", "color": "#111827", "image": "/images/wyze-pro.png" }
+      ],
+      "initialQuantities": {}
+    },
+    {
+      "id": "plan-basic",
+      "name": "Cam Unlimited",
+      "description": "30-day cloud storage for all cameras.",
+      "price": 9.99,
+      "comparePrice": 12.99,
+      "badge": null,
+      "image": "/images/plan.png",
+      "stepId": 2,
+      "hasVariants": false,
+      "variants": [],
+      "initialQuantities": { "plan-basic": 1 }
+    },
+    {
+      "id": "plan-plus",
+      "name": "Plus Plan",
+      "description": "60-day cloud storage + person detection.",
+      "price": 3.99,
+      "comparePrice": 5.99,
+      "badge": "Most Popular",
+      "image": "/images/plan-plus.svg",
+      "stepId": 2,
+      "hasVariants": false,
+      "variants": [],
+      "initialQuantities": {}
+    },
+    {
+      "id": "sensor-motion",
+      "name": "Wyze Sense Motion Sensor",
+      "description": "Detects movement and sends instant alerts.",
+      "price": 59.98,
+      "comparePrice": null,
+      "badge": null,
+      "image": "/images/wyze-sensor-motion.png",
+      "stepId": 3,
+      "hasVariants": false,
+      "variants": [],
+      "initialQuantities": { "sensor-motion": 1 }
+    },
+    {
+      "id": "sensor-contact",
+      "name": "Wyze Sense Hub (Required)",
+      "description": "Know when doors and windows open or close.",
+      "price": 0,
+      "comparePrice": 29.92,
+      "badge": "Free",
+      "image": "/images/sense-hub.png",
+      "stepId": 3,
+      "hasVariants": false,
+      "variants": [],
+      "initialQuantities": { "sensor-contact": 2 }
+    },
+    {
+      "id": "acc-chime",
+      "name": "Wyze MicroSD Card (256GB)",
+      "description": "Wyze MicroSD Card (256GB) that is good for storing data",
+      "price": 41.96,
+      "comparePrice": null,
+      "badge": null,
+      "image": "/images/wyze-microSD.png",
+      "stepId": 4,
+      "hasVariants": false,
+      "variants": [],
+      "initialQuantities": { "acc-chime": 1 }
+    },
+    {
+      "id": "acc-camera-mount",
+      "name": "Wyze Camera Mount",
+      "description": "Flexible mount for indoor or outdoor placement.",
+      "price": 5.98,
+      "comparePrice": null,
+      "badge": null,
+      "image": "/images/mount.svg",
+      "stepId": 4,
+      "hasVariants": false,
+      "variants": [],
+      "initialQuantities": {}
+    }
+  ]
+}

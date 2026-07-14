@@ -1,19 +1,14 @@
-/* eslint-disable no-unused-vars */
 import "./ProductCard.css";
 import Badge from "../../UI/Badge.jsx";
 import VariantSelector from "../VariantSelector/VariantSelector.jsx";
 import QuantityStepper from "../QuantityStepper/QuantityStepper.jsx";
-import { useBundleStore } from "../../../store/bundleStore.js";
+import { useBundleStore, productsData } from "../../../store/bundleStore.js";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ productId }) => {
+  const product = productsData.products.find((p) => p.id === productId);
   const quantities = useBundleStore((s) => s.quantities);
   const activeVariants = useBundleStore((s) => s.activeVariants);
   const getActiveVariantId = useBundleStore((s) => s.getActiveVariantId);
-  const setActiveVariant = useBundleStore((s) => s.setActiveVariant);
-  const increaseProductQuantity = useBundleStore((s) => s.increaseProductQuantity);
-  const decreaseProductQuantity = useBundleStore((s) => s.decreaseProductQuantity);
-  const increaseQuantity = useBundleStore((s) => s.increaseQuantity);
-  const decreaseQuantity = useBundleStore((s) => s.decreaseQuantity);
 
   const activeVariantId = product.hasVariants
     ? activeVariants[product.id] || getActiveVariantId(product.id)
@@ -26,69 +21,36 @@ const ProductCard = ({ product }) => {
     ? product.variants.reduce((sum, v) => sum + (quantities[v.id] || 0), 0)
     : quantities[product.id] || 0;
 
-  const stepperQty = product.hasVariants && activeVariant
-    ? quantities[activeVariant.id] || 0
-    : quantities[product.id] || 0;
-
   const isSelected = totalQty > 0;
-
-  const displayImage =  product.image;
-
-  const handleVariantSelect = (variant) => {
-    if (activeVariantId !== variant.id) {
-      setActiveVariant(product.id, variant.id);
-    }
-  };
-
-  const handleIncrease = () => {
-    if (product.hasVariants && activeVariant) {
-      increaseQuantity(activeVariant.id);
-    } else {
-      increaseProductQuantity(product.id);
-    }
-  };
-
-  const handleDecrease = () => {
-    if (product.hasVariants && activeVariant) {
-      decreaseQuantity(activeVariant.id);
-    } else {
-      decreaseProductQuantity(product.id);
-    }
-  };
+  const stepperVariantId = product.hasVariants && activeVariant
+    ? activeVariant.id
+    : product.id;
 
   return (
-    <article className={`product-card ${isSelected ? "selected" : ""}`}>
+    <article className={`product-card group ${isSelected ? "selected" : ""}`}>
       <div className="product-image-wrapper">
         {product.badge && (
-              <Badge variant={product.badge === "Most Popular" ? "popular" : "discount"}>
-                {product.badge}
-              </Badge>
-            )}
-        <img src={displayImage} alt={product.name} className="product-image" />
+          <Badge variant={product.badge === "Most Popular" ? "popular" : "discount"}>
+            {product.badge}
+          </Badge>
+        )}
+        <img src={product.image} alt={product.name} className="product-image group-hover:scale-105" />
       </div>
 
       <div className="product-card-body">
         <div className="product-card-top">
           <div className="product-card-head">
-            <h3 className="product-name">{product.name}</h3>
+            <h3 className="product-name text-[16px] font-semibold text-[#1F1F1F]">{product.name}</h3>
           </div>
-          <p className="product-description">{product.description}</p>
+          <p className="product-description text-gray-500 text-xs font-medium leading-[1.4]">{product.description}</p>
         </div>
 
         {product.hasVariants && product.variants.length > 0 && (
-          <VariantSelector
-            variants={product.variants}
-            selectedVariantId={activeVariantId}
-            onSelectVariant={handleVariantSelect}
-          />
+          <VariantSelector productId={product.id} />
         )}
 
         <div className="product-card-bottom">
-          <QuantityStepper
-            quantity={stepperQty}
-            onIncrease={handleIncrease}
-            onDecrease={handleDecrease}
-          />
+          <QuantityStepper variantId={stepperVariantId} />
 
           <div className="price">
             {product.comparePrice && (
