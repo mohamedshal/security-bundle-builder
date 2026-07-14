@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "./ProductCard.css";
 import Badge from "../../UI/Badge.jsx";
 import VariantSelector from "../VariantSelector/VariantSelector.jsx";
@@ -6,6 +7,7 @@ import { useBundleStore } from "../../../store/bundleStore.js";
 
 const ProductCard = ({ product }) => {
   const quantities = useBundleStore((s) => s.quantities);
+  const activeVariants = useBundleStore((s) => s.activeVariants);
   const getActiveVariantId = useBundleStore((s) => s.getActiveVariantId);
   const setActiveVariant = useBundleStore((s) => s.setActiveVariant);
   const increaseProductQuantity = useBundleStore((s) => s.increaseProductQuantity);
@@ -13,7 +15,9 @@ const ProductCard = ({ product }) => {
   const increaseQuantity = useBundleStore((s) => s.increaseQuantity);
   const decreaseQuantity = useBundleStore((s) => s.decreaseQuantity);
 
-  const activeVariantId = product.hasVariants ? getActiveVariantId(product.id) : null;
+  const activeVariantId = product.hasVariants
+    ? activeVariants[product.id] || getActiveVariantId(product.id)
+    : null;
   const activeVariant = product.hasVariants
     ? product.variants.find((v) => v.id === activeVariantId) || product.variants[0]
     : null;
@@ -28,8 +32,12 @@ const ProductCard = ({ product }) => {
 
   const isSelected = totalQty > 0;
 
+  const displayImage =  product.image;
+
   const handleVariantSelect = (variant) => {
-    setActiveVariant(product.id, variant.id);
+    if (activeVariantId !== variant.id) {
+      setActiveVariant(product.id, variant.id);
+    }
   };
 
   const handleIncrease = () => {
@@ -50,41 +58,44 @@ const ProductCard = ({ product }) => {
 
   return (
     <article className={`product-card ${isSelected ? "selected" : ""}`}>
-      {product.badge && (
-        <Badge variant={product.badge === "Most Popular" ? "popular" : "discount"}>
-          {product.badge}
-        </Badge>
-      )}
+      <div className="product-image-wrapper">
+        {product.badge && (
+              <Badge variant={product.badge === "Most Popular" ? "popular" : "discount"}>
+                {product.badge}
+              </Badge>
+            )}
+        <img src={displayImage} alt={product.name} className="product-image" />
+      </div>
 
-      <img src={product.image} alt={product.name} className="product-image" />
+      <div className="product-card-body">
+        <div className="product-card-top">
+          <div className="product-card-head">
+            <h3 className="product-name">{product.name}</h3>
+          </div>
+          <p className="product-description">{product.description}</p>
+        </div>
 
-      <h3 className="product-name">{product.name}</h3>
+        {product.hasVariants && product.variants.length > 0 && (
+          <VariantSelector
+            variants={product.variants}
+            selectedVariantId={activeVariantId}
+            onSelectVariant={handleVariantSelect}
+          />
+        )}
 
-      <p className="product-description">{product.description}</p>
+        <div className="product-card-bottom">
+          <QuantityStepper
+            quantity={stepperQty}
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+          />
 
-      <button className="learn-more">Learn More</button>
-
-      {product.hasVariants && product.variants.length > 0 && (
-        <VariantSelector
-          variants={product.variants}
-          selectedVariantId={activeVariantId}
-          onSelectVariant={handleVariantSelect}
-          quantities={quantities}
-        />
-      )}
-
-      <div className="product-card-bottom">
-        <QuantityStepper
-          quantity={stepperQty}
-          onIncrease={handleIncrease}
-          onDecrease={handleDecrease}
-        />
-
-        <div className="price">
-          {product.comparePrice && (
-            <span className="old-price">${product.comparePrice.toFixed(2)}</span>
-          )}
-          <span className="current-price">${product.price.toFixed(2)}</span>
+          <div className="price">
+            {product.comparePrice && (
+              <span className="old-price">${product.comparePrice.toFixed(2)}</span>
+            )}
+            <span className="current-price">${product.price.toFixed(2)}</span>
+          </div>
         </div>
       </div>
     </article>
