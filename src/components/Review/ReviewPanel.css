@@ -1,5 +1,5 @@
 .review-panel {
-  background: white;
+  background:#EDF4FF;
   border-radius: 12px;
   border: 1px solid #E5E7EB;
   position: sticky;
@@ -56,13 +56,32 @@
   padding: 8px 0;
 }
 
+.review-item-image-wrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
 .review-item-image {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 8px;
   background: #F9FAFB;
   flex-shrink: 0;
+  border: 1px solid #F3F4F6;
+}
+
+.review-item-color {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .review-item-info {
@@ -127,6 +146,96 @@
 
 .review-row-value.free {
   color: #059669;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.shipp {
+  color:#9CA3AF !important;
+}
+.price {
+  color:#4E2FD2;
+
+}
+
+.review-row-icon {
+  width: 41px;
+  height: 41px;
+  object-fit: contain;
+}
+
+.review-satis-row {
+  padding: 8px 0;
+}
+
+.review-satis-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.review-satis-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.badge {
+  background: #6D28D9;
+  color: #FFFFFF !important;
+  border-radius:10px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.review-satis-label {
+  display: flex ;
+  justify-content: center;
+  align-items: center ;
+  gap: 5px;
+  font-family:"Glory";
+  font-weight:700;
+  .old-price {
+    font-size:18px !important;
+  }
+  .price {
+    font-size:24px !important;
+    color: #6D28D9 !important;
+  }
+}
+.review-satis-icon {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+}
+
+.review-satis-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: #111827;
+}
+
+
+
+.review-satis-text .badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4338CA;
+}
+
+.review-satis-text .old-price {
+  font-size: 12px;
+  color: #9CA3AF;
+  text-decoration: line-through;
+}
+
+.review-satis-text .price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
 }
 
 .review-guarantee {
@@ -236,6 +345,5 @@
 @media (max-width: 768px) {
   .review-panel {
     position: static;
-    order: -1;
   }
 }
