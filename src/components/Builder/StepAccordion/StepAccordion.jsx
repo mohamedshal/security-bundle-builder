@@ -11,6 +11,7 @@ const StepAccordion = ({ stepNumber, title, icon, nextStepTitle, children }) => 
   const isOpen = activeStep === stepNumber;
   const selectedCount = useMemo(() => calcStepSelectedCount(stepNumber, quantities), [stepNumber, quantities]);
   const isLast = stepNumber === 4;
+  const iconSrc = typeof icon === "string" ? icon.replace(/^\.\/(.*)/, "/$1") : "";
 
   const handleHeaderClick = () => {
     setActiveStep(stepNumber);
@@ -27,7 +28,9 @@ const StepAccordion = ({ stepNumber, title, icon, nextStepTitle, children }) => 
         <div className="step-left">
           <span className="step-number">STEP {stepNumber} OF 4</span>
           <div className="step-title">
-            <span className="step-icon">{icon}</span>
+            <span className="step-icon">
+              <img src={iconSrc} alt={`${title} icon`} />
+            </span>
             <h3>{title}</h3>
           </div>
         </div>
