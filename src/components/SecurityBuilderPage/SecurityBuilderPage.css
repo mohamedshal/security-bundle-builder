@@ -1,23 +1,23 @@
 .security-builder {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 400px;
   gap: 24px;
   max-width: 1200px;
   margin: 32px auto 0;
   padding: 0 20px;
   align-items: start;
+  font-family: "Glory", sans-serif;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1440px) {
   .security-builder {
     grid-template-columns: 1fr;
-    max-width: 600px;
+  }
+}
+@media (max-width: 768px) {
+  .security-builder {
+    grid-template-columns: 1fr;
+    width:390px;
   }
 }
 
-@media (max-width: 480px) {
-  .security-builder {
-    margin-top: 16px;
-    padding: 0 12px;
-  }
-}
