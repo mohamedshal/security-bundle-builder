@@ -109,16 +109,27 @@
   margin-top: 4px;
 }
 
+.prices {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
 .review-item-price-row .quantity-stepper {
   transform: scale(0.85);
   transform-origin: left center;
 }
 
-.review-item-price {
-  font-size: 13px;
-  font-weight: 600;
-  color: #111827;
+.review-item-price, .review-item-old-price {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Gilroy";
 }
+.review-item-price {
+  color:#4E2FD2; 
+}
+
 
 .review-divider {
   height: 1px;
@@ -194,7 +205,7 @@
   justify-content: center;
   align-items: center ;
   gap: 5px;
-  font-family:"Glory";
+  font-family:"Gilroy";
   font-weight:700;
   .old-price {
     font-size:18px !important;
