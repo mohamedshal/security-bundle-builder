@@ -70,9 +70,16 @@ const ReviewPanel = () => {
                       onIncrease={() => increaseQuantity(item.variantId)}
                       onDecrease={() => decreaseQuantity(item.variantId)}
                     />
+                    <div className="prices">
+                      {item.comparePrice && (
+                      <span className="review-item-compare-price old-price shipp">
+                        ${(item.comparePrice * item.quantity).toFixed(2)}
+                      </span>
+                    )}
                     <span className="review-item-price">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      {item.price === 0 ? "FREE" : `$${(item.price * item.quantity).toFixed(2)}`}
                     </span>
+                    </div>
                   </div>
                 </div>
               </div>
