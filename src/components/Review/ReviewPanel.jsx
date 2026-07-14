@@ -53,7 +53,12 @@ const ReviewPanel = () => {
             <h4 className="review-group-title">{category}</h4>
             {items.map((item) => (
               <div key={item.variantId} className="review-item">
-                <img src={item.image} alt={item.name} className="review-item-image" />
+                <div className="review-item-image-wrap">
+                  <img src={item.image} alt={item.name} className="review-item-image" />
+                  {item.variantColor && (
+                    <span className="review-item-color" style={{ backgroundColor: item.variantColor }} />
+                  )}
+                </div>
                 <div className="review-item-info">
                   <span className="review-item-name">
                     {item.name}
@@ -80,8 +85,27 @@ const ReviewPanel = () => {
             <div className="review-divider" />
 
             <div className="review-row shipping-row">
-              <span className="review-row-label">Shipping</span>
-              <span className="review-row-value free">FREE</span>
+              <span className="review-row-value free">
+                <img src="/images/shipping.png" alt="Shipping" className="review-row-icon" />
+                Fast Shipping
+              </span>
+              <span className="review-row-label">
+                <div className="old-price shipp">$5.99</div>
+                <div className="price">FREE</div>
+              </span>
+            </div>
+
+            <div className="review-row review-satis-row">
+              <div className="review-satis-content">
+                <img src="/images/wyze-satis.png" alt="Wyze satisfaction" className="review-satis-icon" />
+                <div className="review-satis-text">
+                  <div className="badge">as low as ${(total / 4).toFixed(2)}/mo</div>
+                  <div className="review-satis-label">
+                    <div className="old-price shipp">${totalCompare.toFixed(2)}</div>
+                    <div className="price">${total.toFixed(2)}</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="review-guarantee">
@@ -95,16 +119,6 @@ const ReviewPanel = () => {
             </div>
 
             <div className="review-divider" />
-
-            <div className="review-total">
-              <span className="total-label">Total</span>
-              <div className="total-prices">
-                {totalCompare > total && (
-                  <span className="total-compare">${totalCompare.toFixed(2)}</span>
-                )}
-                <span className="total-amount">${total.toFixed(2)}</span>
-              </div>
-            </div>
 
             {savings > 0 && (
               <div className="review-savings">
