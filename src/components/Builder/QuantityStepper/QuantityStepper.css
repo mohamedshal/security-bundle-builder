@@ -4,7 +4,7 @@
   justify-content: center;
   gap: 8px;
   width: max-content;
-  border: 1px solid #D1D5DB;
+  border: 1px solid var(--clr-border-strong);
   border-radius: 8px;
   padding: 2px 4px;
 }
@@ -13,12 +13,12 @@
   width: 30px;
   height: 30px;
   border: none;
-  background: #F3F4F6;
+  background: var(--clr-stepper-bg);
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  color: #374151;
+  color: var(--clr-text-label);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +26,7 @@
 }
 
 .quantity-stepper button:hover:not(:disabled) {
-  background: #E5E7EB;
+  background: var(--clr-stepper-hover);
 }
 
 .quantity-stepper button:disabled {
@@ -39,5 +39,5 @@
   text-align: center;
   font-weight: 600;
   font-size: 14px;
-  color: #111827;
+  color: var(--clr-text);
 }

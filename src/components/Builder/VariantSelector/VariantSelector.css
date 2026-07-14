@@ -8,7 +8,7 @@
   font-size: 13px;
   font-weight: 500;
   margin: 0;
-  color: #374151;
+  color: var(--clr-text-label);
 }
 
 .variants {
@@ -22,24 +22,24 @@
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  border: 1px solid #D1D5DB;
-  background: white;
+  border: 1px solid var(--clr-border-strong);
+  background: var(--clr-white);
   
   cursor: pointer;
   font-size: 12px;
   font-weight: 500;
-  color: #374151;
+  color: var(--clr-text-label);
   transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
 }
 
 .variant:hover {
-  border-color: #9CA3AF;
+  border-color: var(--clr-text-muted);
 }
 
 .variant.active {
-  border-color: #7C3AED;
-  background: #F5F3FF;
-  box-shadow: 0 0 0 1px #7C3AED;
+  border-color: var(--clr-accent);
+  background: var(--clr-bg-variant-active);
+  box-shadow: 0 0 0 1px var(--clr-accent);
 }
 
 .swatch {
@@ -66,8 +66,8 @@
 }
 
 .variant-qty {
-  background: #7C3AED;
-  color: white;
+  background: var(--clr-accent);
+  color: var(--clr-white);
   font-size: 10px;
   font-weight: 600;
   min-width: 18px;

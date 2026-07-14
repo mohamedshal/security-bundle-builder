@@ -1,8 +1,8 @@
 .step-accordion {
   width: 100%;
-  background: #EDF4FF;
+  background: var(--clr-bg-soft);
   border-radius: 12px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--clr-border);
   overflow: hidden;
   transition: box-shadow 0.2s;
 }
@@ -19,11 +19,11 @@
   cursor: pointer;
   user-select: none;
   min-height: 70px;
-  background-color:#fff !important;
+  background-color: var(--clr-white) !important;
 }
 
 .step-header:hover {
-  background: #FAFBFF;
+  background: var(--clr-bg-header-hover);
 }
 
 .step-left {
@@ -35,7 +35,7 @@
 .step-number {
   font-size: 11px;
   font-weight: 600;
-  color: #9CA3AF;
+  color: var(--clr-text-muted);
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -66,7 +66,7 @@
   margin: 0;
   font-size: 17px;
   font-weight: 600;
-  color: #111827;
+  color: var(--clr-text);
 }
 
 .step-right {
@@ -76,13 +76,13 @@
 }
 
 .selected-count {
-  color: #7C3AED;
+  color: var(--clr-text-accent);
   font-size: 13px;
   font-weight: 500;
 }
 
 .arrow {
-  color: #7C3AED;
+  color: var(--clr-text-accent);
   font-size: 16px;
   font-weight: 600;
 }
@@ -97,13 +97,13 @@
 .step-next {
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid #F3F4F6;
+  border-top: 1px solid var(--clr-border-light);
 }
 
 .next-btn {
   background: transparent;
-  border: 1px solid #6D28D9;
-  color: #6D28D9;
+  border: 1px solid var(--clr-button-primary-hover);
+  color: var(--clr-button-primary-hover);
   padding: 10px 24px;
   border-radius: 8px;
   font-size: 14px;
@@ -113,8 +113,8 @@
 }
 
 .next-btn:hover {
-  background: #6D28D9;
-  color: #fff;
+  background: var(--clr-button-primary-hover);
+  color: var(--clr-white);
 }
 
 @media (max-width: 768px) {

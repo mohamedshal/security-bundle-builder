@@ -1,5 +1,43 @@
 @import "tailwindcss";
 
+:root {
+  --clr-text: #111827;
+  --clr-text-secondary: #6B7280;
+  --clr-text-label: #374151;
+  --clr-text-muted: #9CA3AF;
+  --clr-text-accent: #7C3AED;
+  --clr-text-price: #575757;
+  --clr-text-price-old: #D8392B;
+  --clr-text-review-price: #4E2FD2;
+  --clr-text-product-name: #1F1F1F;
+  --clr-border: #E5E7EB;
+  --clr-border-strong: #D1D5DB;
+  --clr-border-light: #F3F4F6;
+  --clr-bg: #F8FAFC;
+  --clr-bg-card: #FFFFFF;
+  --clr-bg-soft: #EDF4FF;
+  --clr-bg-header-hover: #FAFBFF;
+  --clr-bg-guarantee: #F0FDF4;
+  --clr-bg-variant-active: #F5F3FF;
+  --clr-badge-popular-bg: #EDE9FE;
+  --clr-badge-popular-text: #6D28D9;
+  --clr-badge-discount-bg: #6D28D9;
+  --clr-button-primary: #7C3AED;
+  --clr-button-primary-hover: #6D28D9;
+  --clr-accent: #7C3AED;
+  --clr-accent-hover: #6D28D9;
+  --clr-accent-dark: #4338CA;
+  --clr-free: #059669;
+  --clr-free-dark: #065F46;
+  --clr-stepper-bg: #F3F4F6;
+  --clr-stepper-hover: #E5E7EB;
+  --clr-savings-bg: #FEF3C7;
+  --clr-savings-text: #92400E;
+  --clr-white: #FFFFFF;
+  --clr-gray-50: #F9FAFB;
+  --clr-body-bg: #F8FAFC;
+}
+
 @font-face {
   font-family: 'Gilroy';
   src: local('Gilroy-Light'), url('https://fonts.cdnfonts.com/s/16219/Gilroy-Light.woff') format('woff');
@@ -33,8 +71,8 @@
 
 body {
   font-family: "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  background: #F8FAFC;
-  color: #111827;
+  background: var(--clr-body-bg);
+  color: var(--clr-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
