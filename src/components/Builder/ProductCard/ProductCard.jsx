@@ -94,7 +94,9 @@ const ProductCard = ({ product }) => {
             {product.comparePrice && (
               <span className="old-price">${product.comparePrice.toFixed(2)}</span>
             )}
-            <span className="current-price">${product.price.toFixed(2)}</span>
+            <span className="current-price">
+              {product.price === 0 ? "FREE" : `$${product.price.toFixed(2)}`}
+            </span>
           </div>
         </div>
       </div>
