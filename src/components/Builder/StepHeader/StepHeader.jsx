@@ -6,7 +6,9 @@ const StepHeader = ({ stepNumber, title, icon, isSelected, isOpen, onToggle }) =
       <div className="step-left">
         <span className="step-number">STEP {stepNumber} OF 4</span>
         <div className="step-title">
-          <span className="step-icon">{icon}</span>
+          <span className="step-icon">
+            <img src={typeof icon === "string" ? icon.replace(/^\.\/(.*)/, "/$1") : ""} alt={`${title} icon`} />
+          </span>
           <h3>{title}</h3>
         </div>
       </div>
