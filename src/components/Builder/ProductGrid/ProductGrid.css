@@ -3,9 +3,12 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   width: 100%;
+  background-color:#EDF4FF;
+  padding: 20px;
+  border-radius: 5px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .product-grid {
     grid-template-columns: 1fr;
   }
