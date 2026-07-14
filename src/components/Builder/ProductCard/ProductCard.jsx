@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-assignment */
 import "./ProductCard.css";
 import Badge from "../../UI/Badge.jsx";
 import VariantSelector from "../VariantSelector/VariantSelector.jsx";
@@ -6,6 +7,13 @@ import { useBundleStore, productsData } from "../../../store/bundleStore.js";
 
 const ProductCard = ({ productId }) => {
   const product = productsData.products.find((p) => p.id === productId);
+  let proCam = false;
+  if(product.id == "cam-pro"){
+    proCam = true;
+  }else{
+    proCam = false;
+  }
+
   const quantities = useBundleStore((s) => s.quantities);
   const activeVariants = useBundleStore((s) => s.activeVariants);
   const getActiveVariantId = useBundleStore((s) => s.getActiveVariantId);
@@ -27,7 +35,7 @@ const ProductCard = ({ productId }) => {
     : product.id;
 
   return (
-    <article className={`product-card group ${isSelected ? "selected" : ""}`}>
+    <article className={proCam? `procam product-card group ${isSelected ? "selected" : ""}`:`product-card group ${isSelected ? "selected" : ""}`}>
       <div className="product-image-wrapper">
         {product.badge && (
           <Badge variant={product.badge === "Most Popular" ? "popular" : "discount"}>

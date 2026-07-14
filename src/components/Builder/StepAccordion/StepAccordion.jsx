@@ -53,7 +53,7 @@ const StepAccordion = ({ stepNumber }) => {
         <div className="step-content flex flex-col items-center px-5 pb-5 pt-1">
           <ProductGrid stepId={stepNumber} />
           {!isLast && (
-            <div className="step-next flex justify-end w-full mt-4 pt-4 border-t border-gray-100">
+            <div className="step-next flex justify-center w-full mt-4 pt-4 border-t border-gray-100">
               <button className="next-btn bg-transparent border border-violet-700 text-violet-700 px-6 py-[10px] rounded-lg text-sm font-semibold cursor-pointer transition-colors hover:bg-violet-700 hover:text-white" onClick={handleNext}>
                 Next: {nextStepData?.title} &rarr;
               </button>
