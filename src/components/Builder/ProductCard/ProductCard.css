@@ -4,10 +4,18 @@
   border: 2px solid #E5E7EB;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 0;
   transition: border-color 0.2s, box-shadow 0.2s;
   overflow: hidden;
 }
+@media(min-width:768px){
+  .product-card:last-child {
+  width: 100%;
+  margin-left:50%;
+}
+}
+
 
 .product-card.selected {
   border-color: #7C3AED;
@@ -63,7 +71,7 @@
 
 .product-name {
   font-size: 16px;
-  font-family: "Glory";
+  font-family: "Gilroy";
   font-weight: 600;
   color: #1F1F1F;
 }
@@ -71,7 +79,7 @@
 .product-description {
   color: #6B7280;
   font-size: 12px;
-  font-family: "Glory";
+  font-family: "Gilroy";
   font-weight: 500;
   line-height: 1.4;
 }
@@ -105,6 +113,7 @@
 @media (max-width: 480px) {
   .product-card {
     flex-direction: column;
+    align-items: center;
   }
 
   .product-image-wrapper {
@@ -122,7 +131,7 @@
   }
 
   .product-card-bottom {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: flex-start;
     gap: 6px;
   }
